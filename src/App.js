@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ListContacts from './ListContacts'
 import * as ContactsAPI from './utils/ContactsAPI'
 import CreateContact from './CreateContact'
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -32,7 +32,7 @@ class App extends Component {
     ContactsAPI.create(contact)
     .then((contact) => {
       this.setState((currentState) => ({
-        contacts: currentState.contacts.concat[contact] 
+        contacts: currentState.contacts.concat([contact]) 
       }))
     })
   }
@@ -51,14 +51,14 @@ class App extends Component {
         <Route path = '/create' render = {( {history} ) => (
           <CreateContact
           onCreateContact = {(contact) => {
-            this.createContact(contact)
+            this.CreateContact(contact)
             history.push('/')
           }}
           />
         )} />
       </div>
     )
-  }
+  };
 }
 
 export default App;
